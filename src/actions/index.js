@@ -15,6 +15,7 @@ export const login = ({ username, password }) => {
 }
 
 export const signup = ({ password, username, displayName }) => {
+    console.log( password, username, displayName);
     return async function (dispatch) {
         var result = await axios.post('https://blooming-stream-45371.herokuapp.com/api/v2/people/create',
             {

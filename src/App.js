@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Login from './components/Login.js';
+import LoginContainer from './components/login/LoginContainer.js'
 import Home from './components/Home.js';
-import Signup from './components/Signup.js';
+import SignupContainer from './components/signup/SignupContainer.js';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
@@ -15,9 +15,9 @@ class App extends React.Component {
     return (
       <Router>
       <div>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={LoginContainer} />
         <Route path="/home" component={Home} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/signup" component={SignupContainer} />
       </div>
     </Router>)
   }
