@@ -2,12 +2,13 @@ input{
     padding: 5px;
     border: 1px solid #D4D4D4;
     border-radius:3px;
-    width: 88%;
+    width: 100%;
+    height: 25px;
 }
 
 button{
     height: 30px;
-    width: 70px;
+    width: 115px;
     color: white;
 }
 
@@ -21,4 +22,39 @@ button.btn-blue{
     background-color: #2A8ED7;
     border: 1px #257cbc solid;
     border-radius: 2px;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    background-color: #E2E2E2;
+    border-radius: 5px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container{
+    padding: 10px;
+    display: flex;
+    place-content: center;
+}
+
+.button-container{
+    place-content: space-around;
+    padding: 10px;
+    display: flex;
+}
+
+.form-fields-container{
+    list-style: none;
+    background-color: #E2E2E2;
+    padding: 0px;
+    border-radius: 10px;
+    width: 300px; 
 }

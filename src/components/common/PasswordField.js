@@ -3,10 +3,10 @@ import './css/common.css';
 
 
 const PasswordField = (props) => {
-    let { handleChange, name } = props;
+    let { handleChange, name, placeholderText } = props;
     return (
         <>
-            <input type="password" name={name} onChange={handleChange}></input>
+            <input type="password" name={name} onChange={handleChange} placeholder={placeholderText}></input>
         </>
     );
 }

@@ -4,7 +4,8 @@ import { signup } from '../../actions';
 import PasswordField from '../common/PasswordField.js';
 import TextField from '../common/TextField.js';
 import ButtonGreen from '../common/ButtonGreen.js';
-import ButtonBlue from '../common/ButtonBlue.js'
+import ButtonBlue from '../common/ButtonBlue.js';
+import '../common/css/common.css';
 
 
 class SignupContainer extends React.Component {
@@ -21,7 +22,7 @@ class SignupContainer extends React.Component {
         passwordAgain: ""
     }
 
-    onSignup(e){
+    onSignup(e) {
         e.preventDefault();
         this.props.signup(this.state);
         this.setState({
@@ -33,11 +34,11 @@ class SignupContainer extends React.Component {
 
         this.props.history.push('/')
     }
+
     onChange(event) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-
         this.setState({
             [name]: value
         });
@@ -46,33 +47,33 @@ class SignupContainer extends React.Component {
     onLogin = (e) => {
         this.props.history.push('/')
     }
-    render() {
 
+    render() {
         return (
-            <div>
+            <div className="form-container">
                 <center style={{ color: 'white' }}>
                     <h2>Please Tell us a little about you !</h2>
                 </center>
 
-                <form style={{ display: 'flex', justifyContent: 'center', padding: '40px' }} onSubmit={this.submitForm}>
-                    <ul style={{ listStyle: 'none', backgroundColor: '#E2E2E2', padding: '0px', borderRadius: '10px', width: '300px' }}>
-                        <li style={{ padding: "10px", display: 'flex', placeContent: 'center' }}>
-                        <TextField name="displayName" handleChange={this.onChange}/>
+                <form onSubmit={this.submitForm}>
+                    <ul className="form-fields-container">
+                        <li className="input-container">
+                            <TextField name="displayName" handleChange={this.onChange} placeholderText="Display Name"/>
                         </li>
 
-                        <li style={{ padding: "10px", display: 'flex', placeContent: 'center' }}>
-                        <TextField name="username" handleChange={this.onChange}/>
+                        <li className="input-container">
+                            <TextField name="username" handleChange={this.onChange} placeholderText="Email"/>
                         </li>
 
-                        <li style={{ padding: "10px", display: 'flex', placeContent: 'center' }}>
-                            <PasswordField name="password" handleChange={this.onChange} />
+                        <li className="input-container">
+                            <PasswordField name="password" handleChange={this.onChange} placeholderText="Password"/>
                         </li>
 
-                        <li style={{ padding: "10px", display: 'flex', placeContent: 'center' }}>
-                            <PasswordField name="passwordAgain" handleChange={this.onChange} />
+                        <li className="input-container">
+                            <PasswordField name="passwordAgain" handleChange={this.onChange} placeholderText="Password Again"/>
                         </li>
 
-                        <li style={{ padding: "10px", display: 'flex', placeContent: 'start space-evenly' }}>
+                        <li className="button-container">
                             <ButtonBlue handleClick={this.onSignUp} label="Sign Up" />
                             <ButtonGreen handleClick={this.onLogin} label="Login" />
                         </li>
