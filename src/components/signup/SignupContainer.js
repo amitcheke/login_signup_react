@@ -11,8 +11,6 @@ import '../common/css/common.css';
 class SignupContainer extends React.Component {
     constructor(props) {
         super(props)
-        // this.onChange = this.onChange.bind(this);
-        // this.onSignup = this.onSignup.bind(this);
     }
 
     state = {
@@ -22,7 +20,7 @@ class SignupContainer extends React.Component {
         passwordAgain: ""
     }
 
-    onSignup = (e) => {
+    onSignupClick = (e) => {
         e.preventDefault();
         this.props.signup(this.state);
         this.setState({
@@ -44,7 +42,7 @@ class SignupContainer extends React.Component {
         });
     }
 
-    onLogin = (e) => {
+    onLoginClick = (e) => {
         this.props.history.push('/')
     }
 
@@ -74,8 +72,8 @@ class SignupContainer extends React.Component {
                         </li>
 
                         <li className="button-container">
-                            <ButtonBlue handleClick={this.onSignUp} label="Sign Up" />
-                            <ButtonGreen handleClick={this.onLogin} label="Login" />
+                            <ButtonBlue handleClick={this.onSignupClick} label="Sign Up" />
+                            <ButtonGreen handleClick={this.onLoginClick} label="Login" />
                         </li>
                     </ul>
                 </form>
