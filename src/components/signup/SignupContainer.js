@@ -11,8 +11,8 @@ import '../common/css/common.css';
 class SignupContainer extends React.Component {
     constructor(props) {
         super(props)
-        this.onChange = this.onChange.bind(this);
-        this.onSignup = this.onSignup.bind(this);
+        // this.onChange = this.onChange.bind(this);
+        // this.onSignup = this.onSignup.bind(this);
     }
 
     state = {
@@ -22,7 +22,7 @@ class SignupContainer extends React.Component {
         passwordAgain: ""
     }
 
-    onSignup(e) {
+    onSignup = (e) => {
         e.preventDefault();
         this.props.signup(this.state);
         this.setState({
@@ -35,7 +35,7 @@ class SignupContainer extends React.Component {
         this.props.history.push('/')
     }
 
-    onChange(event) {
+    onChange = (event) => {
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -55,7 +55,7 @@ class SignupContainer extends React.Component {
                     <h2>Please Tell us a little about you !</h2>
                 </center>
 
-                <form onSubmit={this.submitForm}>
+                <form>
                     <ul className="form-fields-container">
                         <li className="input-container">
                             <TextField name="displayName" handleChange={this.onChange} placeholderText="Display Name"/>

@@ -14,7 +14,6 @@ class LoginContainer extends React.Component {
             password: "",
             username: ""
         }
-        this.onLogin = this.onLogin.bind(this);
     }
 
     onLogin = (e) => {
@@ -47,7 +46,7 @@ class LoginContainer extends React.Component {
                     <h1>Welcome</h1>
                     <h2>Please Login To Continue</h2>
                 </center>
-                <form onSubmit={this.submitForm}>
+                <form>
                     <ul className="form-fields-container">
                         <li className="input-container"> 
                             <TextField name="username" handleChange={this.onChange} placeholderText="Email"/>
